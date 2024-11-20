@@ -5,10 +5,12 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.simpleviewmodel.ui.view.FormMahasiswaView
 import com.example.simpleviewmodel.viewmodel.MahasiswaViewModel
 
 enum class Halaman{
@@ -29,7 +31,10 @@ fun Navigasi(
             navController = navHost,
             startDestination = Halaman.Form.name
         ){
-
+            composable(route = Halaman.Form.name){
+                val konteks = LocalContext.current
+                FormMahasiswaView() { }
+            }
         }
     }
 }
