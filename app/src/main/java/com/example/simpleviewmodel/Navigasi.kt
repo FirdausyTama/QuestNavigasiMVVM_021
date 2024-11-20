@@ -1,6 +1,7 @@
 package com.example.simpleviewmodel
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 
 enum class Halaman{
     Form,
@@ -8,4 +9,6 @@ enum class Halaman{
 }
 
 @Composable
-fun Navigasi(){}
+fun Navigasi(
+    modifier: Modifier = Modifier,
+){}
