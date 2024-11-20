@@ -1,5 +1,6 @@
 package com.example.simpleviewmodel
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -23,5 +24,12 @@ fun Navigasi(
 ){
     Scaffold { isipadding ->
         val uiState by viewModel.uiState.collectAsState()
+        NavHost(
+            modifier = modifier.padding(isipadding),
+            navController = navHost,
+            startDestination = Halaman.Form.name
+        ){
+
+        }
     }
 }
