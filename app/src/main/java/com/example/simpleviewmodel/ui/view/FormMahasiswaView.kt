@@ -29,13 +29,14 @@ fun FormMahasiswaView(
 
                       ) {
     var nama by remember { mutableStateOf("") }
+    var nim by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var noTelpon by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
     var memilihJk by remember { mutableStateOf("") }
 
     val listData: MutableList<String> = mutableListOf(
-        nama, memilihJk, alamat
+        nama, memilihJk, alamat, nim, noTelpon, email
     )
 
 
@@ -56,6 +57,17 @@ fun FormMahasiswaView(
             label = { Text("nama") },
             placeholder = { Text("Masukan Nama Anda") }
         )
+
+        TextField(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            value = nim,
+            onValueChange = {nim = it},
+            label = { Text("nim")},
+            placeholder = { Text("Masukan Nim Anda")}
+        )
+
         Row (verticalAlignment = Alignment.CenterVertically){
             listGender.forEach { item ->
                 Row (verticalAlignment = Alignment.CenterVertically){ RadioButton(
