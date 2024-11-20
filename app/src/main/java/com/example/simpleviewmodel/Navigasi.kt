@@ -1,5 +1,6 @@
 package com.example.simpleviewmodel
 
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -19,4 +20,8 @@ fun Navigasi(
     modifier: Modifier = Modifier,
     viewModel: MahasiswaViewModel = viewModel(),
     navHost: NavHostController = rememberNavController()
-){}
+){
+    Scaffold { isipadding ->
+        val uiState by viewModel.uiState.collectAsState()
+    }
+}
